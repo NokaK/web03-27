@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text {
+            color: blue;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <p></p>
+    <p id="text"></p>
+    <button>Click</button>
+
+
+
+    <div id="wrapper">
+        <p></p>
+        <p></p>
+
+        <p></p>
+    </div>
+
+
+
+
+
+
+    <script>
+        const p = document.querySelector('p');
+        p.textContent = 'Hello World';
+        // p.style.color = 'red';
+        // p.style.fontSize = '50px';
+        p.classList.add('text');
+        // p.classList.remove('text');
+        // console.log(p.classList.contains('text'));
+
+        p.addEventListener('click', () => {
+            p.classList.toggle('text');
+            if (p.textContent === 'Hello World') {
+                p.textContent = 'Hello javascript';
+            } else {
+                p.textContent = 'Hello World';
+            }
+
+        });
+
+        const div = document.createElement('div');
+        div.textContent = 'this is div';
+        const wrapper = document.getElementById('wrapper');
+        wrapper.appendChild(div);
+        console.log(p)
+    </script>
+</body>
+
+</html>
